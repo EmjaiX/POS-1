@@ -1,5 +1,15 @@
 [
     { "item": "Juice", "price": 1.00, "quantity": 24 },
     { "item": "Ideal", "price": 0.25, "quantity": 20 },
+    { "item": "Juice", "price": 1.00, "quantity": 24 },
+    { "item": "Ideal", "price": 0.25, "quantity": 20 },
+    { "item": "Juice", "price": 1.00, "quantity": 24 },
+    { "item": "Ideal", "price": 0.25, "quantity": 20 },
+    { "item": "Juice", "price": 1.00, "quantity": 24 },
+    { "item": "Ideal", "price": 0.25, "quantity": 20 },
+    { "item": "Juice", "price": 1.00, "quantity": 24 },
+    { "item": "Ideal", "price": 0.25, "quantity": 20 },
+    { "item": "Juice", "price": 1.00, "quantity": 24 },
+    { "item": "Ideal", "price": 0.25, "quantity": 20 },
     { "item": "Bread", "price": 1.75, "quantity": 10 }
 ]
