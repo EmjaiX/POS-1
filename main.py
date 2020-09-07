@@ -1,5 +1,4 @@
 #imports
-from array import *
 from functools import partial
 import tkinter as tk
 import json
@@ -23,28 +22,30 @@ def addToCart(item):
     if not added:
         cart.append([item,1])
 def checkout(cart):
-     for item in cart:
-         print(item)
-        # if int(item[i][1]) >0:
-
-    # sub_root = tk.Tk()
-    # i = 0
-    # has_Item = False
-    # for item in cart:
+    #  for item in cart:
     #     if int(item[i][1]) >0:
-    #         has_Item = True
-    #         line = item + "   qty " + str(1) + "   $"  + str(12)
-    #         global total 
-    #         total += 1
-    #         l = tk.Label(sub_root, text=line, bg="black", fg="white" )
-    #         l.pack(padx=5, pady=10, side=tk.TOP)
-    #     i += 1
-    # line = "  Sub-Total  $" + str(total)  
-    # l = tk.Label(sub_root, text=line, bg="black", fg="white" )
-    # l.pack(padx=5, pady=10, side=tk.TOP)
-    # line = "  Total  $" + str(total)    
-    # l = tk.Label(sub_root, text=line, bg="black", fg="white" )
-    # l.pack(padx=5, pady=10, side=tk.TOP)
+
+    sub_root = tk.Tk()
+    i = 0
+    has_Item = False
+    for item in cart:
+        if int(item[i][1]) >0:
+            has_Item
+            has_Item = True
+            line = item + "   qty " + str(1) + "   $"  + str(12)
+            global total 
+            total += 1
+            l = tk.Label(sub_root, text=line, bg="black", fg="white" )
+            l.pack(padx=5, pady=10, side=tk.TOP)
+        i += 1
+    line = "  Sub-Total  $" + str(total)  
+    l = tk.Label(sub_root, text=line, bg="black", fg="white" )
+    l.pack(padx=5, pady=10, side=tk.TOP)
+    line = "  Total  $" + str(total)    
+    l = tk.Label(sub_root, text=line, bg="black", fg="white" )
+    l.pack(padx=5, pady=10, side=tk.TOP)
+    if(has_Item):
+        sub_root.mainloop()
     
 def addItem():
     print()
@@ -72,12 +73,14 @@ column = start
 count = 0
 
 for item in data:
-    w = tk.Button(root, text=item["item"], bg="black", fg="white" ,command=lambda: addToCart(item["item"]))
+    print(item["item"])
+    print(item["price"])
+    w = tk.Button(root, text=item["item"], bg="black", fg="white" ,command=partial(addToCart,item["item"]))
     w.grid(row = row, column = column, columnspan = cspan, rowspan = rspan, pady = padding, padx = padding)
     column += padding
     count += 1
     if (count%5==0):
-        row+=padding
+        row += padding
         column = start
 
 w = tk.Button(root, text="Check Out", bg="white", fg="purple",command=partial(checkout,cart))
