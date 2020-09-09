@@ -24,15 +24,15 @@ def addToCart(item):
 def checkout(cart):
     #  for item in cart:
     #     if int(item[i][1]) >0:
-
     sub_root = tk.Tk()
     i = 0
     has_Item = False
     for item in cart:
-        if int(item[i][1]) >0:
+        if int(item[1]) >0:
             has_Item
+            global data
             has_Item = True
-            line = item + "   qty " + str(1) + "   $"  + str(12)
+            line = item + "   qty " + item[1] + "   $"  + float(int(item[1]) * data[]["price"])
             global total 
             total += 1
             l = tk.Label(sub_root, text=line, bg="black", fg="white" )
@@ -73,9 +73,7 @@ column = start
 count = 0
 
 for item in data:
-    print(item["item"])
-    print(item["price"])
-    w = tk.Button(root, text=item["item"], bg="black", fg="white" ,command=partial(addToCart,item["item"]))
+    w = tk.Button(root, text=item["item"], bg="orange", fg="blue" ,command=partial(addToCart,item["item"]))
     w.grid(row = row, column = column, columnspan = cspan, rowspan = rspan, pady = padding, padx = padding)
     column += padding
     count += 1
